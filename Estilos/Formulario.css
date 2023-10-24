@@ -1,0 +1,50 @@
+body{
+    background-color: #eee;
+}
+
+.Formulario1 {
+    display: inline-block;
+    background-color: white;
+}
+
+.box {
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.4);
+    font-size: 20px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    display:block;
+}
+
+.box input {
+    width: 100%;
+    border: 1px #ddd solid;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+}
+
+.box textarea {
+    width: 100%;
+    border: 1px #ddd solid;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.green-btn {
+    width: 100%;
+    border: none;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    cursor: pointer;
+    color: white;
+}

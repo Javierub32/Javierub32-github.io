@@ -1,0 +1,169 @@
+body {
+    background-color: #eee;
+    font-size: 22px;
+}
+
+.caja {
+    width: 300px;
+    background-color: white;
+    padding: 12px 20px;
+    margin: 20px 20px;
+    box-shadow: 1px 4px 8px #aaad;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.roja {
+    border-left: 2px red solid;
+}
+
+.verde {
+    border-left: 2px green solid;
+}
+.azul {
+    border-left: 2px blue solid;
+}
+
+.roja:hover {
+    transform: scale(1.05, 1.05);
+}
+
+.verde:hover {
+    box-shadow: 1px 4px 15px #666f;
+}
+
+.azul:hover {
+    background-color: #ddd;
+}
+
+
+
+
+
+
+
+
+
+/*   CSS GRID   */
+
+.grid {
+    display: grid;
+    /* grid-template-rows: 60px 60px 60px; */ /* espaciado de las filas a lo alto */
+    /* grid-template-columns: 1fr 3fr 4fr; */ /* define el ancho de las columnas y el número de ellas */
+
+    /* grid-template-rows: minmax(100px, auto); */  /* minmax te da el valor mínimo y máximo de la tabla/columna */
+    /* grid-template-columns: minmax(auto, 50%) 1fr 2fr; */
+
+    grid-template-rows: repeat(3,50px); /* repeat te permite repetir n número de veces el espaciado */
+    grid-template-columns: 30px repeat(3, 1fr) 50px;
+
+    grid-row-gap:20px; /* espacio entre líneas */
+    grid-column-gap:10px ; /* espacio entre columnas */
+    grid-gap: 20px 10px;  /* permite escribir lo anterior unificado (Row, Column) */
+}
+
+.elemento {
+    background-color: red;
+}
+
+.header {
+    grid-column: 1 / 6; /* donde quieres que empiece la grilla horizontalmente / donde quieres que acabe */
+    grid-row: 1 / 3; /* dónde quieres que empiece la grilla verticalmente / dónde quieres que acabe */
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+/*   CSS FLEXBOX   */
+
+.flex {
+    width: 200px;
+    height: 200px;
+    display: flex;
+
+    flex-direction: row;
+    /*
+    row --> En línea (predefinido)
+    column --> En columna
+    row-reverse --> En línea con el contenido al revés
+    column-reverse --> En columna con el contenido al revés
+    */
+
+    flex-wrap: wrap;
+    /*
+    nowrap --> Desactiva el wrap (predefinido)
+    wrap --> Ajusta el texto a su espacio
+    wrap-reverse --> Hace el wrap con el contenido al revés
+    */
+
+    flex-flow: row wrap; /* junta los 2 comandos anteriores */
+
+
+    justify-content: flex-start;
+    /*
+    flex-start --> Texto normal (predefinido)
+    flex-end --> Desplaza el contenido al final
+    center --> Desplaza el contenido al centro
+
+    space-between --> Justifica el texto para que ocupe todo el espacio
+    space-around --> Justifica el texto con un pequeño margen
+    space-evenly --> Justifica el texto con un margen mayor (me gusta más)
+    */
+
+    align-items: flex-start; 
+    /*
+    flex-start --> Contenido normal (predefinido)
+    flex-end --> Contenido abajo del todo
+    center --> Contenido en el centro
+    strech --> Es un flex-start que estira el contenido uniformemente (me gusta más)
+    */
+
+    align-content: center; /* te mueve el contenido dentro de su caja de 200px*200px */
+    /*
+    tiene todas las propiedades anteriores
+    */
+}
+
+.flexx {
+    display: flex;
+    flex-flow: row wrap;
+    height: 150px;
+}
+
+.primero {
+    order: 1; /* te permite ordenar tu contenido*/
+    background-color: aqua;
+    
+}
+
+.tercero {
+    order: -1;
+    background-color: aquamarine;
+    flex-grow: 1;
+    align-self: baseline;
+}
+
+.segundo {
+    flex-basis: 150px; /* le da un ancho inicial y luego aplica flex-grow */
+    flex-grow: 2; /* intenta ocupar todo el espacio que puede en n unidades*/
+}
+
+.cuarto {
+    flex: 2 240px; /* (flex-grow, flex-basis) */ /* te junta las 2 propiedades anteriores */
+    align-self: center;
+    /*
+    flex-start --> Texto normal (predefinido)
+    flex-end --> Desplaza el contenido al final
+    center --> Desplaza el contenido al centro
+    strech --> Es un flex-start que estira el contenido uniformemente (me gusta más)
+
+    baseline --> Le da la altura justa del elemento
+    */
+}
